@@ -1,0 +1,45 @@
+{
+    "metadata": {
+        "harness_version": "1.0.0",
+        "pipeline_evaluated": "MockPipeline"
+    },
+    "research_edge": {
+        "taxonomy_categories": [
+            "retrieval_gap",
+            "rank_inversion",
+            "evidence_under_use",
+            "fabrication",
+            "abstention_failure"
+        ],
+        "inter_annotator_agreement": {
+            "metric": "cohens_kappa",
+            "score": 0.713,
+            "interpretation": "Acceptable"
+        }
+    },
+    "retrieval_metrics": {
+        "dense": {
+            "recall@3": 1.0,
+            "mrr@3": 1.0
+        },
+        "lexical": {
+            "recall@3": 1.0,
+            "mrr@3": 0.33
+        },
+        "hybrid_rerank": {
+            "recall@3": 0.0,
+            "mrr@3": 0.0
+        }
+    },
+    "production_edge": {
+        "regression_gate_fired": true,
+        "reason": "Fabrication rate spiked by 10% while evidence under-use improved.",
+        "action": "CI/CD Build Blocked"
+    },
+    "product_edge": {
+        "intervention": "Inline Citation UI",
+        "evidence_under_use_baseline": 0.22,
+        "evidence_under_use_intervention": 0.09,
+        "latency_cost_ms": 0
+    }
+}
